@@ -3,6 +3,8 @@
 **Front-End**
 - Vuejs/Vuex
 
+**Vue-Plugins**
+- Electronjs
 
 **Author**
 -----------------
