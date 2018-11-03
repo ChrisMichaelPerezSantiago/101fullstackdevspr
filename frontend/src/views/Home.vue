@@ -2,13 +2,6 @@
   <div class="home">
     <h1>Home</h1>
     <button @click.prevent="logIn()">Log In</button>
-    
-    <div v-if="loading">
-      loading...
-    </div>
-    <div v-else v-for="info in data" :key="info.id">
-      <h1>info</h1>
-    </div>
   </div>
 </template>
 
