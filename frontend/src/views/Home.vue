@@ -1,11 +1,13 @@
 <template>
   <div class="home">
     <h1>Home</h1>
-    <button @click="logIn()">Log In</button>
+    <button @click.prevent="logIn()">Log In</button>
   </div>
 </template>
 
 <script>
+  import { GROUP_ID } from '../config/env';
+
   export default {
     name: 'home',
     data(){
@@ -23,8 +25,14 @@
           if(response.status == "connected"){
             this.user = response.authResponse.userID;
             this.accessToken = response.authResponse.accessToken;
+            
+            FB.api(`/${GROUP_ID}/feed`,'GET', function(reponse){
+              if(reponse  && !reponse.error){
+                console.log("api connection => " , reponse);
+              }
+            })
           }
-        },{scope:'public_profile, email'});
+        },{scope:'public_profile, email, groups_access_member_info'});
       }
     }
   }
