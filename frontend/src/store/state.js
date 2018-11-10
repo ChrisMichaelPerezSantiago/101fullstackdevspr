@@ -3,6 +3,7 @@ export const state = {
     loading: true,
     user:{
         id: '',
+        username: '',
         accessToken: ''
     }
 }
