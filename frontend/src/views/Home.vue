@@ -23,7 +23,7 @@
         <v-menu offset-y origin="center center" :nudge-bottom="10" transition="scale-transition">
          <v-btn icon large flat slot="activator">
            <v-avatar size="30px">
-             <img src="../assets/logo.png" alt="user-logo"/>
+             <img src="../assets/user.png" id="userimg" alt="user-logo"/>
            </v-avatar>
          </v-btn>
          <v-list class="pa-0">
@@ -37,6 +37,7 @@
         </v-menu>
       </v-bottom-nav>
     </v-card>
+
 
   </div>
 </template>

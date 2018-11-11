@@ -4,6 +4,6 @@ export const state = {
     user:{
         id: '',
         username: '',
-        accessToken: ''
+        accessToken: '',
     }
 }

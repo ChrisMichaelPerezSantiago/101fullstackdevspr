@@ -9,10 +9,10 @@ export const actions = {
                 state.user.accessToken = res.authResponse.accessToken;
 
                 console.log("user:%s\ntoken:%s" , state.user.id , state.user.accessToken);
-
-                FB.api('/me' , (res) =>{
-                    console.log("/me " , res);
-                    state.user.username = res.name;
+                
+    
+                FB.api(`/${state.user.id}/picture?redirect=0&width=100&height=100` , (res) =>{
+                    document.getElementById("userimg").src = res.data.url;
                 });
 
                 FB.api(`/${GROUP_ID}/feed`,'GET', (res) =>{
