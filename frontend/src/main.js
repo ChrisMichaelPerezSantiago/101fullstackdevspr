@@ -1,15 +1,15 @@
 import Vue from 'vue';
-import './plugins/vuetify'
 import App from './App.vue';
 import router from './router';
 import store from './store/index';
-import Vuetify from 'vuetify';
+import Vuesax  from 'vuesax'
+import { facebookAuth } from './FacebookAuth/index';
+import 'vuesax/dist/vuesax.css' //Vuesax styles
+import './plugins/vuesax.js'
 
 Vue.config.productionTip = false;
 
-Vue.use(Vuetify);
-
-import { facebookAuth } from './FacebookAuth/index';
+Vue.use(Vuesax);
 
 new Vue({
   router,

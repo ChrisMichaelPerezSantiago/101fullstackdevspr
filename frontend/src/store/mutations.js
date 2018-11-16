@@ -1,9 +1,8 @@
-const UPDATE_DATA = 'UPDATE_DATA';
-const IS_LOADING_DATA = 'IS_LOADING_DATA';
+import { UPDATE_DATA , IS_LOADING_DATA } from './constans/index';
 
 export const mutations = {
     [UPDATE_DATA](state , payload){
-        state.data = payload;
+        state.userdata = payload;
     },
     [IS_LOADING_DATA](state, payload){
         state.loading = payload;

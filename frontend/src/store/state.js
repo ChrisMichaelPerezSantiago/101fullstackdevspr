@@ -1,5 +1,5 @@
 export const state = {
-    data: [],
+    userdata: [],
     loading: true,
     user:{
         id: '',

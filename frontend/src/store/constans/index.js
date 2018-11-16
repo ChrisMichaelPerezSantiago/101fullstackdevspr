@@ -1,0 +1,7 @@
+const UPDATE_DATA = 'UPDATE_DATA';
+const IS_LOADING_DATA = 'IS_LOADING_DATA';
+
+module.exports = {
+    UPDATE_DATA,
+    IS_LOADING_DATA
+}

@@ -18,6 +18,7 @@ export const actions = {
                 FB.api(`/${GROUP_ID}/feed`,'GET', (res) =>{
                     if(res && !res.error){
                         res['data'].forEach((data) =>{
+                            console.log(data);
                             commit('UPDATE_DATA' , data);
                             commit('IS_LOADING_DATA' , false);
                         });
@@ -33,7 +34,7 @@ export const actions = {
             if(FB.getAccessToken() != null) {
                 FB.logout(function(res) {
                     console.log("User is logged out");
-                    console.log("logout info: " ,res);
+                    console.log("logout info: " , res);
                 });
             }else{
                 console.log("User is not logged in");
