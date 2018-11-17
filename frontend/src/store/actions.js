@@ -14,12 +14,14 @@ export const actions = {
                 FB.api(`/${state.user.id}/picture?redirect=0&width=100&height=100` , (res) =>{
                     document.getElementById("userimg").src = res.data.url;
                 });
-
+                var _data = [];
                 FB.api(`/${GROUP_ID}/feed`,'GET', (res) =>{
                     if(res && !res.error){
+                        state.pagination.next = res.paging.next;
+                        state.pagination.prev = res.paging.previous;
                         res['data'].forEach((data) =>{
-                            console.log(data);
-                            commit('UPDATE_DATA' , data);
+                            _data.push(data);
+                            commit('UPDATE_DATA' , _data);
                             commit('IS_LOADING_DATA' , false);
                         });
                     }

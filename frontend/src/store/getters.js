@@ -1,5 +1,8 @@
 export const getters = {
-    filterByJobs: (state) => { 
+    filterByMessage: (state) => { 
         return state.userdata.filter((data) => data.message);
+    },
+    filterByStory: (state) => {
+        return state.userdata.filter((data) => data.story);
     }
 }

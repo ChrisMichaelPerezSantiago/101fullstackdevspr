@@ -2,34 +2,46 @@
   <div>
     <div class="container">
 	    <div class="navbar">
-		    <i class="fas fa-home"></i>
+		    <i :to="{name: 'home'}" class="fas fa-home"></i>
 		    <i class="fas fa-comment-alt"></i>
 		    <i @click="logIn" class="fas fa-sign-in-alt"></i>
         <i @click="logOut" class="fas fa-sign-out-alt"></i>
         <i><img id="userimg" src="../assets/user.png" alt=""></i>
 	    </div>
     </div>
+    <br>
+    <vs-row vs-w="12">
+      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-lg="2" vs-sm="4" vs-xs="12" >
+        1
+      </vs-col>
+      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-lg="8" vs-sm="4" vs-xs="12">
+        2
+      </vs-col>
+      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-lg="2" vs-sm="4" vs-xs="12">
+        3
+      </vs-col>
+    </vs-row>
+
   </div>
 </template>
-<script>
-export default {
-  data:()=>({
-    activeItem: 0,
-    search: ''
-  })
-}
-</script>
 
 <script>
-  import { mapActions, mapState } from 'vuex';
+  import { mapState , mapActions , mapGetters} from 'vuex';
   
   export default {
     name: 'home',
-    computed: mapState(['userdata' , 'loading']),
     data(){
       return{
       }
     },
+    computed: {
+      ...mapState(['userdata' , 'loading']),
+      ...mapGetters({
+          messages: 'filterByMessage',
+          stories: 'filterByStory'
+      })
+    },
+
     methods:{
       ...mapActions(['logIn' , 'logOut']),
     },
